@@ -1,4 +1,4 @@
-# change application name here (executable output name)
+
 TARGET=Gestion
  
 # compiler
@@ -22,7 +22,7 @@ LDFLAGS=$(PTHREAD) $(GTKLIB) -export-dynamic
  
 OBJS=  glade.o CRUD.o main.o
  
-all: $(OBJS)
+all:	$(OBJS)
 	$(LD) -o $(TARGET) $(OBJS) $(LDFLAGS)
     
 main.o:  src/glade.h src/CRUD.h src/main.c
@@ -33,6 +33,5 @@ glade.o: src/glade.h src/glade.c
 	$(CC) -c $(CCFLAGS) src/glade.c $(GTKLIB) -o glade.o
 	
     
-clean:
-    
+clean:	
 	rm -f *.o $(TARGET)
